@@ -8,6 +8,8 @@ namespace Units
     [CreateAssetMenu(fileName = "BuildingUnit", menuName = "BuildingUnit", order = 52)]
     public class BuildingUnitData : UnitData<BuildingUnit>
     {
+        public float Food;
+
         public Sprite BuildingSprite;
         public List<UnitData> UnitsToAdd;
         

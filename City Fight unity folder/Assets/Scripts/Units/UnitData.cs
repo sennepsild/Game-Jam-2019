@@ -8,6 +8,7 @@ namespace Units
         public float Population;
         public float Income;
         public float Power;
+       
 
         public abstract IUnit CreateUnit(PlayerData playerData, UnitManager unitManager);
     }
