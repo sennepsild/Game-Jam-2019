@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da7ed35e6eeb4d4fa9be1784797ebc67, type: 3}
-  m_Name: Tavern event 1
+  m_Name: Wealth
   m_EditorClassIdentifier: 
-  Title: Tavern
-  Description: Provide 1 random population per turn cost 60 wealth
+  Title: Wealth
+  Description: Gain 40 wealth
   CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
-  UnitsToAdd:
-  - {fileID: 11400000, guid: 38f38cc60cec22e4a97805e862dc373b, type: 2}
-  WealthChange: 0
+  UnitsToAdd: []
+  WealthChange: 40
   PowerChange: 0
   FoodChange: 0
-  WealthCost: 60
+  WealthCost: 0
   PowerCost: 0
   FoodCost: 0
   TargetData:
-    AmountToLose: 0
-    TargetType: 0
+    AmountToLose: 4
+    TargetType: 2
     TargetClass: 0
     SpecficUnitDataEntries: []
