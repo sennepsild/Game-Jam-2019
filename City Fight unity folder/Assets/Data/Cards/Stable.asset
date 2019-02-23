@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da7ed35e6eeb4d4fa9be1784797ebc67, type: 3}
-  m_Name: Golems
+  m_Name: Stable
   m_EditorClassIdentifier: 
-  Title: Golems
-  Description: 'Grant 2 Golem soldiers  access to your city '
+  Title: Stable
+  Description: 'provide 30 power cost 60 wealth '
   CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
   UnitsToAdd:
-  - {fileID: 11400000, guid: d817f2fe717956a4ea1bcbcede3b5824, type: 2}
-  - {fileID: 11400000, guid: d817f2fe717956a4ea1bcbcede3b5824, type: 2}
+  - {fileID: 11400000, guid: adf32b926154f2745b71b259d2d08ce4, type: 2}
   WealthChange: 0
-  PowerChange: 0
+  PowerChange: 20
   FoodChange: 0
-  WealthCost: 0
+  WealthCost: 60
   PowerCost: 0
   FoodCost: 0
   TargetData:
+    AmountToLose: 0
+    TargetType: 0
     TargetClass: 0
-    TargetUnitDataEntries: []
+    SpecficUnitDataEntries: []

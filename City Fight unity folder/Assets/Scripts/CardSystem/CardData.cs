@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Player;
 using Units;
@@ -21,7 +22,8 @@ namespace CardSystem
         public int WealthCost;
         public int PowerCost;
         public int FoodCost;
-
+        [Header("Target")] 
+        public TargetData TargetData;
 
         public void ApplyCardTo(PlayerData playerData, bool split)
         {
@@ -80,5 +82,22 @@ namespace CardSystem
                 yield return UnitsToAdd[i];
             }
         }
+    }
+    
+    [Serializable]
+    public class TargetData
+    {
+        public int AmountToLose;
+        public TargetType TargetType;
+        public UnitClass TargetClass;
+        public List<UnitData> SpecficUnitDataEntries;
+    }
+
+    public enum TargetType
+    {
+        Specific,
+        Random,
+        RandomSpecificRace,
+        
     }
 }

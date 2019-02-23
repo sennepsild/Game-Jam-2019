@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da7ed35e6eeb4d4fa9be1784797ebc67, type: 3}
-  m_Name: Golems
+  m_Name: Expensive Demands
   m_EditorClassIdentifier: 
-  Title: Golems
-  Description: 'Grant 2 Golem soldiers  access to your city '
+  Title: Raiding farmland
+  Description: You will lose 10 power, but gain 30 food.
   CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
-  UnitsToAdd:
-  - {fileID: 11400000, guid: d817f2fe717956a4ea1bcbcede3b5824, type: 2}
-  - {fileID: 11400000, guid: d817f2fe717956a4ea1bcbcede3b5824, type: 2}
+  UnitsToAdd: []
   WealthChange: 0
-  PowerChange: 0
-  FoodChange: 0
+  PowerChange: -10
+  FoodChange: 30
   WealthCost: 0
   PowerCost: 0
   FoodCost: 0
   TargetData:
+    AmountToLose: 0
+    TargetType: 0
     TargetClass: 0
-    TargetUnitDataEntries: []
+    SpecficUnitDataEntries: []
