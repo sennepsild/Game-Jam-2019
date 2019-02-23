@@ -21,6 +21,8 @@ namespace CardSystem
         public int WealthCost;
         public int PowerCost;
         public int FoodCost;
+        [Header("Target")] 
+        public TargetData TargetData;
 
         public void ApplyCardTo(PlayerData playerData, bool split)
         {
@@ -79,5 +81,11 @@ namespace CardSystem
                 yield return UnitsToAdd[i];
             }
         }
+    }
+
+    public class TargetData
+    {
+        public int AmountToKill;
+        public List<LivingUnitData> SpecificTarget;
     }
 }

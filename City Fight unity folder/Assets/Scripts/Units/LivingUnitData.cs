@@ -6,6 +6,7 @@ namespace Units
     [CreateAssetMenu(fileName = "Living unit data", menuName = "Living unit data", order = 51)]
     public class LivingUnitData : UnitData<LivingUnit>
     {
+        public float FoodCost;
         public UnitClass UnitClass;
         public Sprite BuildingSprite;
         

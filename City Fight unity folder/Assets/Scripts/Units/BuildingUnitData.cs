@@ -9,7 +9,6 @@ namespace Units
     public class BuildingUnitData : UnitData<BuildingUnit>
     {
         public Sprite BuildingSprite;
-        public int Cost;
         public List<UnitData> UnitsToAdd;
         
         protected override BuildingUnit OnCreateUnit(PlayerData playerData, UnitManager unitManager)

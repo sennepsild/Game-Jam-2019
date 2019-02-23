@@ -13,7 +13,6 @@ namespace City
 
         protected override void OnTurn()
         {
-            _playerData.WealthScore -= _unitData.Cost;
             _unitManager.AddUnits(_unitData.UnitsToAdd);
         }
     }
