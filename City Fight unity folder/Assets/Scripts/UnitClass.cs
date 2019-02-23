@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UnitClass : MonoBehaviour
 {
-
-
+    public int CurrentPlayer = 1;
+    
 
 
     // Start is called before the first frame update
