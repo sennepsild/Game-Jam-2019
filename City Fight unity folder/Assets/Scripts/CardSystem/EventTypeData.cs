@@ -13,7 +13,8 @@ namespace CardSystem
     [System.Serializable]
     public class EventData
     {
-        public string EventName;
+        public string Name;
+        public string Description;
         public List<CardData> EventCards;
     }
 
