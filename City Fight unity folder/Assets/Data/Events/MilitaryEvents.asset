@@ -15,7 +15,7 @@ MonoBehaviour:
   EventType: 3
   CardsInEvent:
   - Name: Voluntary Enlistment
-    Description: What fun are Power if you cannot use it?!
+    Description: The people want to serve and fight for glory and honor
     EventCards:
     - {fileID: 11400000, guid: 654ca2c350831154bbc6e5c1ddf30726, type: 2}
     - {fileID: 11400000, guid: ff9125d77791d5d49855a747b7ffe521, type: 2}
@@ -24,7 +24,14 @@ MonoBehaviour:
   - Name: Mercenaries
     Description: Mercenary forces has arrived  and will fight for the highest bidder.
     EventCards:
-    - {fileID: 11400000, guid: ed42cfea3466c644d9da67ad38a0adfc, type: 2}
-    - {fileID: 11400000, guid: d6175f1c82fc4144ca1b509b9bfba9f4, type: 2}
+    - {fileID: 11400000, guid: 98d3185ab3c8efc469ff51c572e951e6, type: 2}
+    - {fileID: 11400000, guid: 82d6cca15561dc84bae106add8bd14ff, type: 2}
     - {fileID: 11400000, guid: 8d3f0a4dfb4ea064caa82ecafe50cc07, type: 2}
     - {fileID: 11400000, guid: 6a509e7e1aeb78941a6c928cf82f0180, type: 2}
+  - Name: Conquest
+    Description: What fun are Power if you cannot use it?!
+    EventCards:
+    - {fileID: 11400000, guid: ed42cfea3466c644d9da67ad38a0adfc, type: 2}
+    - {fileID: 11400000, guid: d6175f1c82fc4144ca1b509b9bfba9f4, type: 2}
+    - {fileID: 11400000, guid: a5e640701d8e5ca479dc57c05a42417a, type: 2}
+    - {fileID: 11400000, guid: adf7dab8fff5d8c49aec8ff97948075c, type: 2}

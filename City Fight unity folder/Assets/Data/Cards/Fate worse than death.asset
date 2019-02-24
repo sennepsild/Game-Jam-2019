@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Fate worse than death
   Description: Lose 10 random citizens, but gain 4 undead
-  CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
-  UnitsToAdd: []
+  UnitsToAdd:
+  - {fileID: 11400000, guid: 494b5faeb4455c94588278e245c8d1db, type: 2}
+  - {fileID: 11400000, guid: 494b5faeb4455c94588278e245c8d1db, type: 2}
+  - {fileID: 11400000, guid: 494b5faeb4455c94588278e245c8d1db, type: 2}
+  - {fileID: 11400000, guid: 494b5faeb4455c94588278e245c8d1db, type: 2}
   WealthChange: 0
   PowerChange: 0
   FoodChange: 0
@@ -27,3 +30,4 @@ MonoBehaviour:
     TargetType: 1
     TargetClass: 0
     SpecficUnitDataEntries: []
+  PlayerAttackIndex: -1

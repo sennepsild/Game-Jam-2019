@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EventType: 1
   CardsInEvent:
-  - Name: Stranger
-    Description: Stranger from distant land seek to populate your city
+  - Name: Immigration
+    Description: Strangers from distant land seek to populate your city
     EventCards:
     - {fileID: 11400000, guid: b050bebd72142904786e38371dc59cb5, type: 2}
     - {fileID: 11400000, guid: 7313db40f31cbe34884bb719bb8216f1, type: 2}
@@ -41,6 +41,6 @@ MonoBehaviour:
       individuals '
     EventCards:
     - {fileID: 11400000, guid: 8c11a802fc25e414cad96a54113e99f7, type: 2}
-    - {fileID: 11400000, guid: 78ce635d13e646346ac6da709a866868, type: 2}
+    - {fileID: 11400000, guid: 489d3a913244a444d85b16125f67826b, type: 2}
     - {fileID: 11400000, guid: fdcb6662b625a744f8a79aa3eb334bf8, type: 2}
-    - {fileID: 11400000, guid: 6f08a0867154c0849a3dc6daa0804a31, type: 2}
+    - {fileID: 11400000, guid: fdeb587645272df43ac7153dd2e8b115, type: 2}

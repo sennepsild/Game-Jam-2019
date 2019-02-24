@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11247461ff624ca89263f40a1d89e333, type: 3}
-  m_Name: Cyclops
+  m_Name: Human Worker
   m_EditorClassIdentifier: 
-  Population: 10
-  Income: 4
-  Power: 7
-  FoodCost: 14
-  ChanceOfDyingInCombat: 13
-  UnitClass: 0
+  Population: 1
+  Income: 1
+  Power: 1
+  FoodCost: 1
+  ChanceOfDyingInCombat: 50
+  UnitClass: 1
   BuildingSprite: {fileID: 21300000, guid: ef503666e3e3c0b4aa2b05c5658838c5, type: 3}

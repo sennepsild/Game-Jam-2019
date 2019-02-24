@@ -10,21 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da7ed35e6eeb4d4fa9be1784797ebc67, type: 3}
-  m_Name: Slaves
+  m_Name: Unorganized Assaults
   m_EditorClassIdentifier: 
-  Title: Slaves
-  Description: Buy 4 human workers for 10 wealth and 10 food
-  UnitsToAdd:
-  - {fileID: 11400000, guid: 2b71cc7f8ee406a4a95a04516e94ad65, type: 2}
-  - {fileID: 11400000, guid: 2b71cc7f8ee406a4a95a04516e94ad65, type: 2}
-  - {fileID: 11400000, guid: 2b71cc7f8ee406a4a95a04516e94ad65, type: 2}
-  - {fileID: 11400000, guid: 2b71cc7f8ee406a4a95a04516e94ad65, type: 2}
+  Title: Unorganized Assaults
+  Description: You will lose 10 power, but the other players will lose 6 citizens
+  UnitsToAdd: []
   WealthChange: 0
-  PowerChange: 0
+  PowerChange: -10
   FoodChange: 0
-  WealthCost: 10
+  WealthCost: 0
   PowerCost: 0
-  FoodCost: 10
+  FoodCost: 0
   TargetData:
     AmountToLose: 0
     TargetType: 0

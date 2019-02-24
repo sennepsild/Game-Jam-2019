@@ -10,17 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da7ed35e6eeb4d4fa9be1784797ebc67, type: 3}
-  m_Name: Soldier Cyclops
+  m_Name: Golems Military event 2
   m_EditorClassIdentifier: 
-  Title: Soldier Cyclops
-  Description: Grant 2  Soldier Cyclops access to your city
-  CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
+  Title: Golems
+  Description: Gain 2 Soldier Golems for 30 Wealth
   UnitsToAdd:
-  - {fileID: 11400000, guid: 8598146a0853a1e41a8fe9fada6e00c7, type: 2}
-  - {fileID: 11400000, guid: 8598146a0853a1e41a8fe9fada6e00c7, type: 2}
+  - {fileID: 11400000, guid: bc13fb7756f5ddc4db467f941012b45c, type: 2}
+  - {fileID: 11400000, guid: bc13fb7756f5ddc4db467f941012b45c, type: 2}
   WealthChange: 0
   PowerChange: 0
   FoodChange: 0
-  WealthCost: 0
+  WealthCost: 30
   PowerCost: 0
   FoodCost: 0
+  TargetData:
+    AmountToLose: 0
+    TargetType: 0
+    TargetClass: 0
+    SpecficUnitDataEntries: []
+  PlayerAttackIndex: -1

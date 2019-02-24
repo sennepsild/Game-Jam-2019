@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Golems
   Description: 'Grant 2 Golem soldiers  access to your city '
-  CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
   UnitsToAdd:
-  - {fileID: 11400000, guid: d817f2fe717956a4ea1bcbcede3b5824, type: 2}
-  - {fileID: 11400000, guid: d817f2fe717956a4ea1bcbcede3b5824, type: 2}
+  - {fileID: 11400000, guid: bc13fb7756f5ddc4db467f941012b45c, type: 2}
+  - {fileID: 11400000, guid: bc13fb7756f5ddc4db467f941012b45c, type: 2}
   WealthChange: 0
   PowerChange: 0
   FoodChange: 0
@@ -25,5 +24,8 @@ MonoBehaviour:
   PowerCost: 0
   FoodCost: 0
   TargetData:
+    AmountToLose: 0
+    TargetType: 0
     TargetClass: 0
-    TargetUnitDataEntries: []
+    SpecficUnitDataEntries: []
+  PlayerAttackIndex: -1

@@ -14,19 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Worker Humans
   Description: Grant 8 Worker humans access to your city
-  CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
   UnitsToAdd:
-  - {fileID: 11400000, guid: c58da2e395c2b0441aea50adbac3fa0b, type: 2}
-  - {fileID: 11400000, guid: c58da2e395c2b0441aea50adbac3fa0b, type: 2}
-  - {fileID: 11400000, guid: c58da2e395c2b0441aea50adbac3fa0b, type: 2}
-  - {fileID: 11400000, guid: c58da2e395c2b0441aea50adbac3fa0b, type: 2}
-  - {fileID: 11400000, guid: c58da2e395c2b0441aea50adbac3fa0b, type: 2}
-  - {fileID: 11400000, guid: c58da2e395c2b0441aea50adbac3fa0b, type: 2}
-  - {fileID: 11400000, guid: c58da2e395c2b0441aea50adbac3fa0b, type: 2}
-  - {fileID: 11400000, guid: c58da2e395c2b0441aea50adbac3fa0b, type: 2}
+  - {fileID: 11400000, guid: 2b71cc7f8ee406a4a95a04516e94ad65, type: 2}
+  - {fileID: 11400000, guid: 2b71cc7f8ee406a4a95a04516e94ad65, type: 2}
+  - {fileID: 11400000, guid: 2b71cc7f8ee406a4a95a04516e94ad65, type: 2}
+  - {fileID: 11400000, guid: 2b71cc7f8ee406a4a95a04516e94ad65, type: 2}
+  - {fileID: 11400000, guid: 2b71cc7f8ee406a4a95a04516e94ad65, type: 2}
+  - {fileID: 11400000, guid: 2b71cc7f8ee406a4a95a04516e94ad65, type: 2}
+  - {fileID: 11400000, guid: 2b71cc7f8ee406a4a95a04516e94ad65, type: 2}
+  - {fileID: 11400000, guid: 2b71cc7f8ee406a4a95a04516e94ad65, type: 2}
   WealthChange: 0
   PowerChange: 0
   FoodChange: 0
   WealthCost: 0
   PowerCost: 0
   FoodCost: 0
+  TargetData:
+    AmountToLose: 0
+    TargetType: 0
+    TargetClass: 0
+    SpecficUnitDataEntries: []
+  PlayerAttackIndex: -1

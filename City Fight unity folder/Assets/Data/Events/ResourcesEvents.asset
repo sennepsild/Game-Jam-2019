@@ -18,7 +18,7 @@ MonoBehaviour:
     Description: A previously undiscovered  bounty as been uncovered, it is ready
       for the taking
     EventCards:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 82554c6ce8d764b49984871059f80c62, type: 2}
+    - {fileID: 11400000, guid: a1b7bab44d35f66449a0787832d43798, type: 2}
+    - {fileID: 11400000, guid: 2ab1508c77e16b64d8e0146dda2d11dd, type: 2}
+    - {fileID: 11400000, guid: 82786fe1a0a1bde40881d2dfac7708b1, type: 2}
