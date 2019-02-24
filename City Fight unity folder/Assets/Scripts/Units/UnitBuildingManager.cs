@@ -25,9 +25,9 @@ namespace Units
         private void OnUnitAdded(UnitData unitData)
         {
             LivingUnitData livingUnitData = unitData as LivingUnitData;
-            Type unitType = livingUnitData.GetType();
             if (livingUnitData != null)
             {
+                Type unitType = livingUnitData.GetType();
                 if ((IsFirstTimePlacingBuildingForUnitType(unitType) || HasReachedMaxCountForUnitType(unitType)))
                 {
                     SpawnBuilding(livingUnitData, unitType);

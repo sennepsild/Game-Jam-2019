@@ -35,21 +35,26 @@ namespace City
             _buildings = new List<IBuilding>();
         }
         
-        public IBuilding AddNormalBuilding(Sprite buildingSprite)
+        public IBuilding AddNormalBuilding(Sprite buildingSprite, Vector2 size)
         {
-            return AddBuilding(_buildingUiManagerPrefab, buildingSprite);
+            return AddBuilding(_buildingUiManagerPrefab, buildingSprite, size);
         }
 
         public IBuilding AddRaceBuilding(Sprite buildingSprite)
         {
-            return AddBuilding(_raceBuildingUiManagerPrefab, buildingSprite);
+            return AddBuilding(_raceBuildingUiManagerPrefab, buildingSprite, Vector2.zero);
         }
         
-        private IBuilding AddBuilding(Object obj, Sprite buildingSprite)
+        private IBuilding AddBuilding(Object obj, Sprite buildingSprite, Vector2 size)
         {
             IBuilding building = Instantiate(obj, GetBuildPosition(), Quaternion.identity, _buildingParent) as IBuilding;
             building.SetBuildingSprite(buildingSprite);
+            if (size != Vector2.zero)
+            {
+                building.SetBuildingSize(size);
+            }
             _buildings.Add(building);
+            _currentBuildCountInCircle++;
 
             return building;
         }

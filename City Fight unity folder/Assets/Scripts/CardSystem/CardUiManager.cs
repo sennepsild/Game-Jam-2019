@@ -143,6 +143,7 @@ namespace CardSystem
                 Timer.Register(SHOW_TIME_AFTER_PLAYERS_CHOSEN_CARDS, Hide);
                 _hasShownHighlights = true;
                 ApplyCards();
+                Attack();
             }
         }
 
@@ -159,6 +160,14 @@ namespace CardSystem
             foreach (var spawnedCard in _spawnedCards)
             {
                 spawnedCard.Apply();
+            }
+        }
+        
+        public void Attack()
+        {
+            foreach (var spawnedCard in _spawnedCards)
+            {
+                spawnedCard.Attack();
             }
         }
 

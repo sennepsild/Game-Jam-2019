@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d6526bca4944ea8a6a91b4de3fbeb87, type: 3}
-  m_Name: Windmill
+  m_Script: {fileID: 11500000, guid: 11247461ff624ca89263f40a1d89e333, type: 3}
+  m_Name: worker Halfling
   m_EditorClassIdentifier: 
-  Population: 0
-  Income: 0
-  Power: 0
-  Food: 10
-  BuildingSprite: {fileID: 21300000, guid: 0097a687e90b15743874d1c1854c53b9, type: 3}
-  Size: {x: 25, y: 25}
-  UnitsToAdd: []
+  Population: 0.4
+  Income: 2
+  Power: 0.3
+  FoodCost: 1
+  ChanceOfDyingInCombat: 70
+  UnitClass: 1
+  BuildingSprite: {fileID: 21300000, guid: ef503666e3e3c0b4aa2b05c5658838c5, type: 3}
