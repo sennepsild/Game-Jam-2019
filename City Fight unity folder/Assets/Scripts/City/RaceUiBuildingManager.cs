@@ -8,6 +8,8 @@ namespace City
 {
     public class RaceUiBuildingManager : MonoBehaviour, IBuilding
     {
+        private static readonly Vector2 ODD_OFFSET = new Vector2(0.5f,0f); 
+        
         [SerializeField]
         private Transform _leftUpperCorner;
 
@@ -29,6 +31,7 @@ namespace City
         {
             _gridSize = _image.rectTransform.rect.size / _raceBuildingPrefab.rectTransform.rect.size;
             _grid = new bool[(int)_gridSize.x, (int)_gridSize.y];
+            Destroy(_image);
         }
 
         public void SetBuildingSprite(Sprite buildingSprite)
@@ -60,7 +63,9 @@ namespace City
             List<Vector2> possibleSpawnPosition = GetPossibleSpawnPositions();
             Vector2 randomSpawnPosition = possibleSpawnPosition[Random.Range(0, possibleSpawnPosition.Count)];
             _grid[(int)randomSpawnPosition.x, (int)randomSpawnPosition.y] = true;
-            return (Vector2)_leftUpperCorner.localPosition + ToWorldPosition(randomSpawnPosition * Vector2.down);
+            bool useOffset = randomSpawnPosition.y % 2 > 0;
+            Vector2 offset = useOffset ? ODD_OFFSET : Vector2.zero;
+            return (Vector2)_leftUpperCorner.localPosition + ToWorldPosition((offset +  randomSpawnPosition) * new Vector2(1, -1));
         }
 
         private List<Vector2> GetPossibleSpawnPositions()
@@ -83,6 +88,7 @@ namespace City
 
         private Vector2 ToWorldPosition(Vector2 gridPosition)
         {
+            print("gridPosition: "+ gridPosition);
             return gridPosition * _raceBuildingPrefab.rectTransform.rect.size;
         }
     }

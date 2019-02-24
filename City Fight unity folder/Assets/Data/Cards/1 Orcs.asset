@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7ed35e6eeb4d4fa9be1784797ebc67, type: 3}
   m_Name: 1 Orcs
   m_EditorClassIdentifier: 
-  Title: 1 Orcs
+  Title: Orcs
   Description: Gain 6 orc soldiers
   CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
   UnitsToAdd:

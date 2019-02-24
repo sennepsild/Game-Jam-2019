@@ -19,5 +19,17 @@ namespace Units
         {
             return new BuildingUnit(this, playerData, unitManager);
         }
+        
+        public override int GetHashCode()
+        {
+            int hashCode = base.GetHashCode() + (int)(Food *   10);
+
+            foreach (var unitData in UnitsToAdd)
+            {
+                hashCode += unitData.GetHashCode();
+            }
+
+            return hashCode;
+        }
     }
 }

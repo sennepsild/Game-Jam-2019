@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3661732992448165306}
   - component: {fileID: 3661732992448165303}
-  - component: {fileID: 3661732992448165304}
   - component: {fileID: 3661732992448165305}
+  - component: {fileID: 6088275216836200877}
   m_Layer: 0
   m_Name: RaceBuildingUIManager
   m_TagString: Untagged
@@ -47,7 +47,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3661732992448165307}
   m_CullTransparentMesh: 0
---- !u!114 &3661732992448165304
+--- !u!114 &3661732992448165305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3661732992448165307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463ee5e2885a4e86ae83fef5e46e92e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftUpperCorner: {fileID: 3661732993935577634}
+  _raceBuildingPrefab: {fileID: 5659055358149040665, guid: 260663696f8b2184296ebad0639fc461,
+    type: 3}
+  _image: {fileID: 6088275216836200877}
+  _buildingsParent: {fileID: 3661732992448165306}
+--- !u!114 &6088275216836200877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,7 +84,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dc66f221b2f57c24481154cb1a049e06, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -76,23 +93,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &3661732992448165305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3661732992448165307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463ee5e2885a4e86ae83fef5e46e92e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _leftUpperCorner: {fileID: 3661732993935577634}
-  _raceBuildingPrefab: {fileID: 5659055358149040665, guid: 260663696f8b2184296ebad0639fc461,
-    type: 3}
-  _image: {fileID: 3661732992448165304}
-  _buildingsParent: {fileID: 3661732992448165306}
 --- !u!1 &3661732993935577635
 GameObject:
   m_ObjectHideFlags: 0

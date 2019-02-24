@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Population: 2
   Income: 2
-  FoodCost: 2
   Power: 3
+  FoodCost: 2
+  ChanceOfDyingInCombat: 30
   UnitClass: 0
   BuildingSprite: {fileID: 21300000, guid: ef503666e3e3c0b4aa2b05c5658838c5, type: 3}

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4ea6d6e6d84e1f9e7c0c39c80d4ffb, type: 3}
+  m_Name: MilitaryEvents
+  m_EditorClassIdentifier: 
+  EventType: 3
+  CardsInEvent:
+  - Name: Voluntary Enlistment
+    Description: What fun are Power if you cannot use it?!
+    EventCards:
+    - {fileID: 11400000, guid: 654ca2c350831154bbc6e5c1ddf30726, type: 2}
+    - {fileID: 11400000, guid: ff9125d77791d5d49855a747b7ffe521, type: 2}
+    - {fileID: 11400000, guid: 630b52aa39e961f4fae47611ef671490, type: 2}
+    - {fileID: 11400000, guid: 4bf7f3e90bcb0b34fad1378936544acc, type: 2}
+  - Name: Mercenaries
+    Description: Mercenary forces has arrived  and will fight for the highest bidder.
+    EventCards:
+    - {fileID: 11400000, guid: ed42cfea3466c644d9da67ad38a0adfc, type: 2}
+    - {fileID: 11400000, guid: d6175f1c82fc4144ca1b509b9bfba9f4, type: 2}
+    - {fileID: 11400000, guid: 8d3f0a4dfb4ea064caa82ecafe50cc07, type: 2}
+    - {fileID: 11400000, guid: 6a509e7e1aeb78941a6c928cf82f0180, type: 2}

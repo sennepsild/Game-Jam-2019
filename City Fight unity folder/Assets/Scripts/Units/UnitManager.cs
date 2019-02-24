@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Player;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Units
 {
@@ -9,13 +10,13 @@ namespace Units
     {
         private PlayerData _playerData;
 
-        private List<IUnit> _units;
+        public List<IUnit> Units { get; private set; }
 
         public event Action<UnitData> UnitAdded;
         
         public UnitManager(PlayerData playerData)
         {
-            _units = new List<IUnit>();
+            Units = new List<IUnit>();
             _playerData = playerData;
         }
 
@@ -34,20 +35,33 @@ namespace Units
                 UnitAdded.Invoke(unitData);
             }
             IUnit unit = unitData.CreateUnit(_playerData, this);
-            _units.Add(unit);
+            Units.Add(unit);
         }
 
         public void OnTurn()
         {
-            foreach (var unit in _units)
+            foreach (var unit in Units)
             {
                 unit.Turn();
             }
         }
 
+        public void RemoveUnits(IEnumerable<IUnit> units)
+        {
+            foreach (var unit in units)
+            {
+                RemoveUnit(unit);
+            }
+        }
+        
         public void RemoveUnit(IUnit unit)
         {
-            _units.Remove(unit);
+            Units.Remove(unit);
+        }
+
+        public IUnit GetRandomUnit()
+        {
+            return Units[Random.Range(0, Units.Count)];
         }
     }
 }

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Bar : MonoBehaviour
 {
     private const float MIN_FILL_VALUE = 0.1f;
+    private const float MAX_FILL_VALUE = 1f;
     private static float max = 10;
 
     public float value { get; set; }
@@ -18,7 +19,7 @@ public class Bar : MonoBehaviour
    
     public void resize()
     {
-        _image.fillAmount = Mathf.Max(MIN_FILL_VALUE, value / max);
+        _image.fillAmount = Mathf.Min(Mathf.Max(MIN_FILL_VALUE, value / max), MAX_FILL_VALUE);
     }
 
     public static void UpdateMax()

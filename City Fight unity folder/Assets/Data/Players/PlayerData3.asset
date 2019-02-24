@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: PlayerData3
   m_EditorClassIdentifier: 
   PlayerIndex: 2
-  InputDeviceSlot: 19
+  InputDeviceSlot: 3
+  _powerScore: 0
+  _foodScore: 0
+  _wealthScore: 0
+  PrioritySprite: {fileID: 21300032, guid: 44912228355747449bd0ef1a2198cc6e, type: 3}

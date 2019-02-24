@@ -14,23 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EventType: 0
   CardsInEvent:
-  - Cards:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - Cards:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - Cards:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - Cards:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+  - Name: Caravan
+    Description: The long awaited Caravan has arrived a sell goods for a cost
+    EventCards:
+    - {fileID: 11400000, guid: 5793d16a7412fb14bacc5057ef07ae51, type: 2}
+    - {fileID: 11400000, guid: 663726766dca3b44c8a60876f5ea5541, type: 2}
+    - {fileID: 11400000, guid: d810f0f5880bd9745ac5968be44a9489, type: 2}
+    - {fileID: 11400000, guid: 56a5e8444670d584d83bda0a5982650e, type: 2}
+  - Name: Black Market
+    Description: 'Dubious merchants offer to sell ominous and perhaps forbidden goods '
+    EventCards:
+    - {fileID: 11400000, guid: b59c3a233527a2e4b8685c639eb64c4d, type: 2}
+    - {fileID: 11400000, guid: ea9b546d88d42d348bcb1ec4a82948ec, type: 2}
+    - {fileID: 11400000, guid: 4cd8544c2d24b7f45a353d5e9d86d67b, type: 2}
+    - {fileID: 11400000, guid: 83ad867e2c191d14d9ddff0a2d163827, type: 2}
+  - Name: Annual fair
+    Description: The annual fair has arrived and many exciting goods are to be sold
+      for a good price
+    EventCards:
+    - {fileID: 11400000, guid: b8e75ff81fc2e78488ee03acfc9843ad, type: 2}
+    - {fileID: 11400000, guid: 2bf1976207be304449a9086bf050e276, type: 2}
+    - {fileID: 11400000, guid: bc09e97fb29bb994d837771fad3df7bd, type: 2}
+    - {fileID: 11400000, guid: a1bb43052523e304b9522d4db094d038, type: 2}

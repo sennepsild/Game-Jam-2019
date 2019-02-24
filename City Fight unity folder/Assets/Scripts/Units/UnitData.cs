@@ -8,9 +8,18 @@ namespace Units
         public float Population;
         public float Income;
         public float Power;
-       
 
         public abstract IUnit CreateUnit(PlayerData playerData, UnitManager unitManager);
+
+        public override bool Equals(object other)
+        {
+            return GetHashCode() == other.GetHashCode();
+        }
+
+        public override int GetHashCode()
+        {
+            return (int)(Population + Income + Power * 10) ;
+        }
     }
 
     public abstract class UnitData<TUnit> : UnitData where TUnit : IUnit

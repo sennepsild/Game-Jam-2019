@@ -1,6 +1,7 @@
 using City;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Player
 {
@@ -10,13 +11,16 @@ namespace Player
         private BuildPlacementManager _buildPlacementManager;
 
         [SerializeField]
-        private PlayerUiManager _playerUiManager;
+        private Image _flagImage;
+
+        [SerializeField]
+        private Sprite[] _flagSprites;
 
         public void Init(PlayerData playerData)
         {
+            _flagImage.sprite = _flagSprites[playerData.PlayerIndex];
             playerData.BuildPlacementManager = _buildPlacementManager;
             playerData.Init();
-            _playerUiManager.Init(playerData);
         }
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Disease
   m_EditorClassIdentifier: 
   Title: Disease
-  Description: 'Lose 10 random Citizens from '
+  Description: Lose 10 random Citizens
   CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
   UnitsToAdd:
   - {fileID: 11400000, guid: d817f2fe717956a4ea1bcbcede3b5824, type: 2}

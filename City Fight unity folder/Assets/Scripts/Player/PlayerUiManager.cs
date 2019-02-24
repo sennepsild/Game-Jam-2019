@@ -14,11 +14,14 @@ public class PlayerUiManager : MonoBehaviour
     [SerializeField]
     private Bar _populationBar, _foodBar, _wealthBar, _powerBar;
 
+    [SerializeField]
+    private int _playerIndex;
+
     private PlayerData _playerData;
 
-    public void Init(PlayerData playerData)
+    private void Awake()
     {
-        _playerData = playerData;
+        _playerData = Game.Instance.GetPlayerData(_playerIndex);
     }
 
     void Update()
@@ -28,10 +31,10 @@ public class PlayerUiManager : MonoBehaviour
 
     void UpdateScore()
     {
-        _populationScoreText.text = _playerData.PopulationScore.ToString();
-        _foodScoreText.text = _playerData.FoodScore.ToString();
-        _wealthScoreText.text = _playerData.WealthScore.ToString();
-        _powerScoreText.text = _playerData.PowerScore.ToString();
+        _populationScoreText.text = _playerData.PopulationScore.ToString("F0");
+        _foodScoreText.text = _playerData.FoodScore.ToString("F0");
+        _wealthScoreText.text = _playerData.WealthScore.ToString("F0");
+        _powerScoreText.text = _playerData.PowerScore.ToString("F0");
 
 
         _populationBar.value = _playerData.PopulationScore;

@@ -10,15 +10,48 @@ namespace Player
     {
         public int PlayerIndex;
         public InputDeviceSlot InputDeviceSlot;
-        public float PopulationScore;
-        public float FoodScore;
-        public float WealthScore;
-        public float PowerScore;
         
+        [SerializeField]
+        private float _powerScore;
+        
+        [SerializeField]
+        private float _foodScore;
+        
+        [SerializeField]
+        private float _wealthScore;
+        
+        public float PopulationScore{ get; set; }
+
+        public float FoodScore
+        {
+            get { return _foodScore; }
+            set { _foodScore = value; }
+        }
+
+        public float WealthScore
+        {
+            get { return _wealthScore; }
+            set { _wealthScore = value; }
+        }
+
+        public float PowerScore
+        {
+            get { return _powerScore + PowerTempBoost; }
+            set { _powerScore = value; }
+        }
+
+        public Sprite PrioritySprite;
+
+
+
         public bool HasPriority { get; set; }
         public bool HasChosenCard { get; set; }
+        
+        public bool IsAttacking { get; set; }
         public UnitManager UnitManager { get; private set; }
         public BuildPlacementManager BuildPlacementManager { get; set; }
+        
+        public float PowerTempBoost { get; set; }
 
         public void Init()
         {
@@ -30,6 +63,8 @@ namespace Player
         {
             HasPriority = false;
             HasChosenCard = false;
+            IsAttacking = false;
+            PowerTempBoost = 0;
         }
     }
 }

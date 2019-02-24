@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
 
 namespace DefaultNamespace
 {
+    [Serializable]
     public class CardInputData
     {
-        public string InputText { get; set; }
-        public string Inputkey { get; set; }
+        public string InputKey;
+        public Sprite InputSprite;
     }
 }

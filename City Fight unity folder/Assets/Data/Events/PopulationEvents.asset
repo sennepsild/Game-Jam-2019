@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4ea6d6e6d84e1f9e7c0c39c80d4ffb, type: 3}
+  m_Name: PopulationEvents
+  m_EditorClassIdentifier: 
+  EventType: 2
+  CardsInEvent:
+  - Name: Plague
+    Description: Illness has fallen upon the land, Death is on the doorstep!
+    EventCards:
+    - {fileID: 11400000, guid: e4469738fe4735b4b96cc1e4a55e3a37, type: 2}
+    - {fileID: 11400000, guid: 75dca14d242548c468acf9f4d93be3f3, type: 2}
+    - {fileID: 11400000, guid: 964d375495d79a34dae87b7bfd3eb081, type: 2}
+    - {fileID: 11400000, guid: 69d93e10da39e9543b511b36f9aa0422, type: 2}

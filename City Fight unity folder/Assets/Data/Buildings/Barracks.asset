@@ -15,6 +15,6 @@ MonoBehaviour:
   Population: 0
   Income: 0
   Power: 2
-  FoodCost: 0
-  BuildingSprite: {fileID: 21300000, guid: f2cdb720a35b5474ea60ff109ab3a59a, type: 3}
+  Food: 0
+  BuildingSprite: {fileID: 21300000, guid: a7d44ac85d20e4e4d90b795fb1562225, type: 3}
   UnitsToAdd: []

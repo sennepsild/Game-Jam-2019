@@ -11,7 +11,6 @@ namespace CardSystem
 {
     public class CardUi : MonoBehaviour
     {
-        private const string INPUT_DESCRIPTION = "Press {0}";
         private const float MINIMUM_CARD_CHOSEN_HIGHLIGHT_DURATION = 2;
         
         [SerializeField]
@@ -21,10 +20,7 @@ namespace CardSystem
         private TextMeshProUGUI _descriptionLabel;
 
         [SerializeField] 
-        private Image _cardImage;
-
-        [SerializeField] 
-        private TextMeshProUGUI _inputDescription;
+        private Image _inputImage;
 
         [SerializeField]
         private CardChosenHighlightUi _cardChosenHighlightUi;
@@ -43,8 +39,7 @@ namespace CardSystem
             _cardInputData = cardInputData;
             _titleLabel.text = cardData.Title;
             _descriptionLabel.text = cardData.Description;
-            _cardImage.sprite = cardData.CardSprite;
-            _inputDescription.text = string.Format(INPUT_DESCRIPTION, cardInputData.InputText);
+            _inputImage.sprite = cardInputData.InputSprite;
         }
 
         public void Show(float fadeDuration)
@@ -57,7 +52,7 @@ namespace CardSystem
 
         private void OnButtonPressed(string inputNamePressed, PlayerData playerData)
         {
-            if (inputNamePressed == _cardInputData.Inputkey && !playerData.HasChosenCard)
+            if (inputNamePressed == _cardInputData.InputKey && !playerData.HasChosenCard)
             {
                 playerData.HasChosenCard = true;
                 _playersChosenThisCard.Add(playerData);
@@ -86,6 +81,14 @@ namespace CardSystem
             else
             {
                 ApplyCardToAllPlayers();
+            }
+        }
+
+        public void Attack()
+        {
+            foreach (var playerData in _playersChosenThisCard)
+            {
+                CardData.Attack(playerData);
             }
         }
 

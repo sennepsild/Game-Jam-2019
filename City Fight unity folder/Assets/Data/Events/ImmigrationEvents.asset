@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4ea6d6e6d84e1f9e7c0c39c80d4ffb, type: 3}
+  m_Name: ImmigrationEvents
+  m_EditorClassIdentifier: 
+  EventType: 1
+  CardsInEvent:
+  - Name: Stranger
+    Description: Stranger from distant land seek to populate your city
+    EventCards:
+    - {fileID: 11400000, guid: b050bebd72142904786e38371dc59cb5, type: 2}
+    - {fileID: 11400000, guid: 7313db40f31cbe34884bb719bb8216f1, type: 2}
+    - {fileID: 11400000, guid: eaa4d80fff713a7439a975b7bd25b2fe, type: 2}
+    - {fileID: 11400000, guid: 9d31670cffd8dce4b804fabc0720d844, type: 2}
+  - Name: Refugee
+    Description: Creatures from wartorn lands seek sanctuary  within your walls
+    EventCards:
+    - {fileID: 11400000, guid: 78ce635d13e646346ac6da709a866868, type: 2}
+    - {fileID: 11400000, guid: a349f815a4a268144bc5638d93b008f7, type: 2}
+    - {fileID: 11400000, guid: 8c11a802fc25e414cad96a54113e99f7, type: 2}
+    - {fileID: 11400000, guid: 38a3a926e6673a848a6663dab8db849a, type: 2}
+  - Name: Abandoned soldiers
+    Description: The war in a distant land has ended and armies seek new chance to
+      settle down.
+    EventCards:
+    - {fileID: 11400000, guid: c66c303b1231c1d40817208eaf5b0ed3, type: 2}
+    - {fileID: 11400000, guid: df876e9656d06df44822550dae44702b, type: 2}
+    - {fileID: 11400000, guid: c06721dfbabea8e41a73709522265e47, type: 2}
+    - {fileID: 11400000, guid: 3ebe0c8ace451f04fb574ac41c76c111, type: 2}
+  - Name: 'Opportunists '
+    Description: 'Your city look like a promising place for certain opportunistic
+      individuals '
+    EventCards:
+    - {fileID: 11400000, guid: 8c11a802fc25e414cad96a54113e99f7, type: 2}
+    - {fileID: 11400000, guid: 78ce635d13e646346ac6da709a866868, type: 2}
+    - {fileID: 11400000, guid: fdcb6662b625a744f8a79aa3eb334bf8, type: 2}
+    - {fileID: 11400000, guid: 6f08a0867154c0849a3dc6daa0804a31, type: 2}

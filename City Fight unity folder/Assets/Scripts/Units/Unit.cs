@@ -21,7 +21,12 @@ namespace Units
         {
             _playerData.PopulationScore += _unitData.Population;
         }
-        
+
+        public T GetUnitData<T>() where T : UnitData
+        {
+            return _unitData as T;
+        }
+
         public void Turn()
         {
             IncreaseStats();

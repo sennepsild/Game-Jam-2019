@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using DefaultNamespace;
 using Extensions;
 using Player;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace CardSystem
@@ -15,33 +18,11 @@ namespace CardSystem
         private const float FADE_IN_DURATION = 1;
         private const float FADE_OUT_DURATION = 1;
         
-        
-        private List<CardInputData> _cardInputDataEntries = new List<CardInputData>
-        {
-            new CardInputData()
-            {
-                Inputkey = Controls.AButton,
-                InputText = "A"
-            },
-            new CardInputData()
-            {
-                Inputkey = Controls.BButton,
-                InputText = "B"
-            },
-            new CardInputData()
-            {
-                Inputkey = Controls.XButton,
-                InputText = "X"
-            },
-            new CardInputData()
-            {
-                Inputkey = Controls.YButton,
-                InputText = "Y"
-            }
-        };
-        
         [SerializeField]
-        private List<CardData> _cardDataEntries;
+        private List<EventTypeData> _eventTypeDatas;
+
+        [SerializeField]
+        private List<CardInputData> _cardInputDataEntries;
 
         [SerializeField]
         private CardUi _cardUiPrefab;
@@ -49,29 +30,67 @@ namespace CardSystem
         [SerializeField]
         private Transform _cardsUiRoot;
 
+        [SerializeField]
+        private TextMeshProUGUI _eventTitle;
+        
+        [SerializeField]
+        private TextMeshProUGUI _eventDescription;
+
+        [SerializeField]
+        private CanvasGroup _uiRoot;
+
+        [SerializeField]
+        private Image _priorityImage;
+
+        [SerializeField]
+        private EventTypeData _combatEvents;
+
+        [SerializeField] 
+        private GameObject _priorityWithCrownGo;
+
         private List<CardUi> _spawnedCards;
+        private EventType _lastEventType;
         private bool _hasShownHighlights;
+        private int _playerPriorityIndex;
 
         public event Action CardsHasBeenChosen;
 
         private void Awake()
         {
-            Show();
+            _playerPriorityIndex = 0;
         }
 
-        public void Show()
+        public void Show(bool combat = false)
         {
+            _priorityWithCrownGo.SetActive(!combat);
+            _uiRoot.Activate();
             _hasShownHighlights = false;
             Game.Instance.ResetPlayerDataEntries();
+            Game.Instance.GetPlayerData(_playerPriorityIndex).HasPriority = !combat;
             KillAllCards();
-            List<CardData> randomCards = GetRandomCards();
-            SpawnCards(randomCards);
+            List<CardData> cardsFromEvent = GetCards(combat);
+            SpawnCards(cardsFromEvent);
+        }
+
+        private List<CardData> GetCards(bool combat)
+        {
+            if (combat)
+            {
+                return GetCardsFromEvents(new List<EventTypeData> { _combatEvents});
+            }
+            return GetCardsFromEvents(_eventTypeDatas);
         }
 
         public void Hide()
         {
+            _uiRoot.Deactivate();
             KillAllCards(FADE_OUT_DURATION);
             Timer.Register(FADE_OUT_DURATION, () => CardsHasBeenChosen.SafeInvoke());
+            _playerPriorityIndex++;
+            if (_playerPriorityIndex >= Game.Instance.PlayerDataEntries.Count)
+            {
+                _playerPriorityIndex = 0;
+            }
         }
 
         private void KillAllCards(float fadeOutDuration = 0)
@@ -97,31 +116,23 @@ namespace CardSystem
             }
         }
 
-        private List<CardData> GetRandomCards()
+        private List<CardData> GetCardsFromEvents(List<EventTypeData> events)
         {
-            List<CardData> possibleCards = GetPossibleCards();
-            List<CardData> randomCards = new List<CardData>();
+            List<EventTypeData> possibleEventTypeDataEntries =
+                events.FindAll(item => item.EventType != _lastEventType);
 
-            for (int i = 0; i < CARDS_COUNT; i++)
-            {
-                CardData randomCard = Instantiate(possibleCards[Random.Range(0, possibleCards.Count)]);
-                randomCards.Add(randomCard);
-                possibleCards.Remove(randomCard);
-            }
+            EventTypeData eventTypeData =
+                possibleEventTypeDataEntries[Random.Range(0, possibleEventTypeDataEntries.Count)];
+            EventData randomEventData = eventTypeData.CardsInEvent[Random.Range(0, eventTypeData.CardsInEvent.Count)];
 
-            return randomCards;
-        }
+            _eventTitle.text = randomEventData.Name;
+            _eventDescription.text = randomEventData.Description;
+            _priorityImage.sprite = Game.Instance.GetPlayerData(_playerPriorityIndex).PrioritySprite;
 
-        private List<CardData> GetPossibleCards()
-        {
-            List<CardData> possibleCards = new List<CardData>();
+            _lastEventType = eventTypeData.EventType;
 
-            foreach (var cardData in _cardDataEntries)
-            {
-                possibleCards.Add(Instantiate(cardData));
-            }
 
-            return possibleCards;
+            return randomEventData.EventCards;
         }
 
         private void Update()

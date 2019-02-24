@@ -6,6 +6,7 @@ namespace DefaultNamespace
     public class TurnManager : MonoBehaviour
     {
         private const float TURN_DURATION = 5;
+        private const int COMBAT_ROUND_TURN_COUNT = 5;
         
         [SerializeField]
         private CardUiManager _cardUiManager;
@@ -15,6 +16,8 @@ namespace DefaultNamespace
         private void Awake()
         {
             _cardUiManager.CardsHasBeenChosen += EndTurn;
+            _turnCount = 1;
+            OnEndOfTurn();
         }
 
         private void EndTurn()
@@ -24,8 +27,14 @@ namespace DefaultNamespace
                 playerDataEntry.UnitManager.OnTurn();
             }
             
-            Timer.Register(TURN_DURATION, _cardUiManager.Show);
+            Timer.Register(TURN_DURATION, OnEndOfTurn);
             _turnCount++;
+        }
+
+        private void OnEndOfTurn()
+        {
+            bool startingCombat = _turnCount % COMBAT_ROUND_TURN_COUNT == 0;
+            _cardUiManager.Show(startingCombat);
         }
     }
 }
