@@ -25,6 +25,7 @@ namespace CardSystem
         Population,
         Military,
         Building,
+        Resources,
         Combat
     }
 }

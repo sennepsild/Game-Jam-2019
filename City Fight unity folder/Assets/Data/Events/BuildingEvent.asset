@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4ea6d6e6d84e1f9e7c0c39c80d4ffb, type: 3}
+  m_Name: BuildingEvent
+  m_EditorClassIdentifier: 
+  EventType: 4
+  CardsInEvent:
+  - Name: City scaling
+    Description: There might be extra resources to spare, this is a perfect opportunity
+      to grant the kingdom a new useful building
+    EventCards:
+    - {fileID: 11400000, guid: 7b05c67568eaf2d45a793866d12dc7b0, type: 2}
+    - {fileID: 11400000, guid: 52761acfd27a23a41b71f562c0920a55, type: 2}
+    - {fileID: 11400000, guid: bd0abebe0146f844280ad2ae3250cc51, type: 2}
+    - {fileID: 11400000, guid: 52761acfd27a23a41b71f562c0920a55, type: 2}
+  - Name: Peculiar Guest
+    Description: Your kingdom is blossoming, this attract strange creatures.
+    EventCards:
+    - {fileID: 11400000, guid: b5a42535ff8761a4fa950a27ada5cbb7, type: 2}
+    - {fileID: 11400000, guid: a595c889e3befbb4fae06ef806f8c91d, type: 2}
+    - {fileID: 11400000, guid: 75bfe9ad124c3cb49bcef0b44ea35563, type: 2}
+    - {fileID: 11400000, guid: 843fa40ac9bdb98469a65a03162b54db, type: 2}
+  - Name: Something to Remember
+    Description: Your kingdom i visited by builders, they offer you to build a building
+      as a monument of their gratitude.
+    EventCards:
+    - {fileID: 11400000, guid: 757fb1e241c126949933d8555429530e, type: 2}
+    - {fileID: 11400000, guid: 4424bbfd358f8a041812bcc62928a287, type: 2}
+    - {fileID: 11400000, guid: ebf24d62b272f0d478b00b7031aca196, type: 2}
+    - {fileID: 11400000, guid: 1472ee4852024494993c8882411f6c01, type: 2}
+  - Name: The kingdom could use an improvement
+    Description: There might be extra resources to spare, this is a perfect opportunity
+      to grant the kingdom a new useful building
+    EventCards:
+    - {fileID: 11400000, guid: 07685b75dd493284c8ae195006089e5f, type: 2}
+    - {fileID: 11400000, guid: 2c4e5e9ce7190d941abdab965f02fb8f, type: 2}
+    - {fileID: 11400000, guid: 5dc446acc27b11049b890b51944dda59, type: 2}
+    - {fileID: 11400000, guid: f62868c8937947d458d4153e4067f7c9, type: 2}
