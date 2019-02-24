@@ -11,6 +11,7 @@ namespace Units
         public float Food;
 
         public Sprite BuildingSprite;
+        public Vector2 Size;
 
 
         public List<UnitData> UnitsToAdd;

@@ -13,6 +13,11 @@ namespace City
             _image.sprite = buildingSprite;
         }
 
+        public void SetBuildingSize(Vector2 size)
+        {
+            _image.rectTransform.sizeDelta = size;
+        }
+
         public void Destroy()
         {
             Destroy(gameObject);

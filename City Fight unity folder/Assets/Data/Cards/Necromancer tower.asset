@@ -13,19 +13,21 @@ MonoBehaviour:
   m_Name: Necromancer tower
   m_EditorClassIdentifier: 
   Title: Necromancer Tower
-  Description: Cost 10 random citizens and 30 wealth, provide 5 undead per turn and
+  Description: Cost 5 random citizens and 30 wealth, provide 5 undead per turn and
     kill 1 non undead citizen
-  CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
   UnitsToAdd:
   - {fileID: 11400000, guid: a59c884f2a00bc246b15c3e36f5f0952, type: 2}
-  - {fileID: 11400000, guid: 4b5b5cc7a9a783b43ab989fe3f31457d, type: 2}
-  - {fileID: 11400000, guid: 4b5b5cc7a9a783b43ab989fe3f31457d, type: 2}
-  - {fileID: 11400000, guid: 4b5b5cc7a9a783b43ab989fe3f31457d, type: 2}
-  - {fileID: 11400000, guid: 4b5b5cc7a9a783b43ab989fe3f31457d, type: 2}
-  - {fileID: 11400000, guid: 4b5b5cc7a9a783b43ab989fe3f31457d, type: 2}
+  EvenSplit: 1
   WealthChange: 0
   PowerChange: 0
   FoodChange: 0
   WealthCost: 30
   PowerCost: 0
   FoodCost: 0
+  KillCost: 5
+  TargetData:
+    AmountToLose: 0
+    TargetType: 0
+    TargetClass: 0
+    SpecficUnitDataEntries: []
+  PlayerAttackIndex: -1

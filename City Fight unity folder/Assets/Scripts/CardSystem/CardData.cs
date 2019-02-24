@@ -17,15 +17,16 @@ namespace CardSystem
         public string Title;
         public string Description;
         public List<UnitData> UnitsToAdd;
+        public bool EvenSplit;
         [Header("Change")]
         public int WealthChange;
-
         public int PowerChange;
         public int FoodChange;
         [Header("Cost")] 
         public int WealthCost;
         public int PowerCost;
         public int FoodCost;
+        public int KillCost;
         [Header("Target")] 
         public TargetData TargetData;
 
@@ -46,7 +47,8 @@ namespace CardSystem
         private bool CanAfford(PlayerData playerData)
         {
             return playerData.FoodScore >= FoodCost && playerData.WealthScore >= WealthCost
-                                                    && playerData.PowerScore >= PowerCost;
+                                                    && playerData.PowerScore >= PowerCost
+                                                    && playerData.UnitManager.Units.Count >= KillCost;
 
         }
 
@@ -56,13 +58,23 @@ namespace CardSystem
             playerData.WealthScore += GetWealthChangeAmount(split);
             playerData.PowerScore += GetPowerChangeAmount(split);
             playerData.UnitManager.AddUnits(GetUnitsToAddAmount(split));
+            
         }
 
+        private void PayKillCost(PlayerData playerData)
+        {
+            for (int i = 0; i < KillCost; i++)
+            {
+                playerData.UnitManager.Units.Remove(playerData.UnitManager.GetRandomUnit());
+            }
+        }
+        
         private void ApplyCosts(PlayerData playerData)
         {
             playerData.FoodScore -= FoodCost;
             playerData.WealthScore -= WealthCost;
             playerData.PowerScore -= PowerCost;
+            PayKillCost(playerData);
         }
 
         private void ApplyTarget(PlayerData playerData)
@@ -231,7 +243,7 @@ namespace CardSystem
         private IEnumerable<UnitData> GetUnitsToAddAmount(bool split)
         {
             int unitCount = UnitsToAdd.Count;
-            if (split)
+            if (split && !EvenSplit)
             {
                 unitCount /= 2;
             }

@@ -15,12 +15,19 @@ MonoBehaviour:
   Title: Dragon lair
   Description: Cost 40 wealth pr day or 1 citizen provide 40 power need 150 wealth
     to buy
-  CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
   UnitsToAdd:
   - {fileID: 11400000, guid: a85a5f42e8ba831449cf76c82339dd5b, type: 2}
+  EvenSplit: 1
   WealthChange: 150
   PowerChange: 0
   FoodChange: 0
   WealthCost: 150
   PowerCost: 0
   FoodCost: 0
+  KillCost: 0
+  TargetData:
+    AmountToLose: 0
+    TargetType: 0
+    TargetClass: 0
+    SpecficUnitDataEntries: []
+  PlayerAttackIndex: -1

@@ -14,17 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Windmill
   Description: Provide 10 food per turn cost 60 wealth
-  CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
   UnitsToAdd:
   - {fileID: 11400000, guid: 2923a1ac78d277b4cb23b9d45736b2f4, type: 2}
+  EvenSplit: 1
   WealthChange: 0
   PowerChange: 0
   FoodChange: 0
   WealthCost: 60
   PowerCost: 0
   FoodCost: 0
+  KillCost: 0
   TargetData:
     AmountToLose: 0
     TargetType: 0
     TargetClass: 0
     SpecficUnitDataEntries: []
+  PlayerAttackIndex: -1

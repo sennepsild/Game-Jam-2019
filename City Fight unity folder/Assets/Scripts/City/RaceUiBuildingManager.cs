@@ -40,6 +40,11 @@ namespace City
             SpawnBuilding();
         }
 
+        public void SetBuildingSize(Vector2 size)
+        {
+            _image.rectTransform.localScale = size;
+        }
+
         public void SpawnBuilding()
         {
             Vector2 spawnPosition = GetSpawnPosition();

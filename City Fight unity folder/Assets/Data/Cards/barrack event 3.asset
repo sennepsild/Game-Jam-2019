@@ -14,12 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Barracks
   Description: Provide 2 power per turn
-  CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
   UnitsToAdd:
   - {fileID: 11400000, guid: f089bfbbf2ac4ab4185f79f8ac43f84c, type: 2}
+  EvenSplit: 1
   WealthChange: 0
   PowerChange: 0
   FoodChange: 0
   WealthCost: 0
   PowerCost: 0
   FoodCost: 0
+  KillCost: 0
+  TargetData:
+    AmountToLose: 0
+    TargetType: 0
+    TargetClass: 0
+    SpecficUnitDataEntries: []
+  PlayerAttackIndex: -1
