@@ -16,6 +16,10 @@ namespace City
             _playerData.FoodScore += _unitData.Food;
             _playerData.WealthScore += _unitData.Income;
             _playerData.PopulationScore += _unitData.Population;
+            foreach (var unitAdding in _unitData.UnitsToAdd)
+            {
+                Debug.Log("unitAdding: " + unitAdding.GetHashCode());
+            }
             _unitManager.AddUnits(_unitData.UnitsToAdd);
         }
     }

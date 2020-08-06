@@ -18,4 +18,4 @@ MonoBehaviour:
   FoodCost: 0
   ChanceOfDyingInCombat: 10
   UnitClass: 1
-  BuildingSprite: {fileID: 21300000, guid: ef503666e3e3c0b4aa2b05c5658838c5, type: 3}
+  BuildingSprite: {fileID: 21300000, guid: e04e7e26859a35f41a1576a4c5eb1356, type: 3}

@@ -10,7 +10,7 @@ namespace Units
         public float ChanceOfDyingInCombat;
         public UnitClass UnitClass;
         public Sprite BuildingSprite;
-        
+
         protected override LivingUnit OnCreateUnit(PlayerData playerData, UnitManager unitManager)
         {
             return new LivingUnit(this, playerData, unitManager);

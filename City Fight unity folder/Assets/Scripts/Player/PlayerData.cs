@@ -19,6 +19,9 @@ namespace Player
         
         [SerializeField]
         private float _wealthScore;
+
+        [SerializeField]
+        private UnitData[] _unitsToStartWith;
         
         public float PopulationScore{ get; set; }
 
@@ -36,27 +39,27 @@ namespace Player
 
         public float PowerScore
         {
-            get { return _powerScore + PowerTempBoost; }
+            get { return _powerScore; }
             set { _powerScore = value; }
         }
 
         public Sprite PrioritySprite;
 
-
-
         public bool HasPriority { get; set; }
         public bool HasChosenCard { get; set; }
         
         public bool IsAttacking { get; set; }
+        
+        public bool IsDefending { get; set; }
         public UnitManager UnitManager { get; private set; }
         public BuildPlacementManager BuildPlacementManager { get; set; }
-        
-        public float PowerTempBoost { get; set; }
+       
 
         public void Init()
         {
             UnitManager = new UnitManager(this);
             new UnitBuildingManager(UnitManager, BuildPlacementManager);
+            UnitManager.AddUnits(_unitsToStartWith);
         }
 
         public void Reset()
@@ -64,7 +67,7 @@ namespace Player
             HasPriority = false;
             HasChosenCard = false;
             IsAttacking = false;
-            PowerTempBoost = 0;
+            IsDefending = false;
         }
     }
 }

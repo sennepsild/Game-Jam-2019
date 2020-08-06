@@ -52,6 +52,7 @@ namespace CardSystem
         private EventType _lastEventType;
         private bool _hasShownHighlights;
         private int _playerPriorityIndex;
+        private List<EventTypeData> _eventTypeDataEntriesLeft;
 
         public event Action CardsHasBeenChosen;
 
@@ -62,6 +63,10 @@ namespace CardSystem
 
         public void Show(bool combat = false)
         {
+            if (_eventTypeDataEntriesLeft == null)
+            {
+                _eventTypeDataEntriesLeft = new List<EventTypeData>(_eventTypeDatas);
+            }
             _priorityWithCrownGo.SetActive(!combat);
             _uiRoot.Activate();
             _hasShownHighlights = false;
@@ -78,7 +83,8 @@ namespace CardSystem
             {
                 return GetCardsFromEvents(new List<EventTypeData> { _combatEvents});
             }
-            return GetCardsFromEvents(_eventTypeDatas);
+            
+            return GetCardsFromEvents(_eventTypeDataEntriesLeft);
         }
 
         public void Hide()
@@ -118,21 +124,41 @@ namespace CardSystem
 
         private List<CardData> GetCardsFromEvents(List<EventTypeData> events)
         {
-            List<EventTypeData> possibleEventTypeDataEntries =
-                events.FindAll(item => item.EventType != _lastEventType);
-
-            EventTypeData eventTypeData =
-                possibleEventTypeDataEntries[Random.Range(0, possibleEventTypeDataEntries.Count)];
-            EventData randomEventData = eventTypeData.CardsInEvent[Random.Range(0, eventTypeData.CardsInEvent.Count)];
+            EventTypeData randomEventTypeData = getRandomEventTypeData(events);
+            EventData randomEventData = randomEventTypeData.CardsInEvent[Random.Range(0, randomEventTypeData.CardsInEvent.Count)];
 
             _eventTitle.text = randomEventData.Name;
             _eventDescription.text = randomEventData.Description;
             _priorityImage.sprite = Game.Instance.GetPlayerData(_playerPriorityIndex).PrioritySprite;
 
-            _lastEventType = eventTypeData.EventType;
+            _lastEventType = randomEventTypeData.EventType;
 
 
             return randomEventData.EventCards;
+        }
+
+        private EventTypeData getRandomEventTypeData(List<EventTypeData> events)
+        {
+            if (events.Count <= 0)
+            {
+                _eventTypeDataEntriesLeft = _eventTypeDatas;
+                events = _eventTypeDataEntriesLeft;
+            }
+            
+            List<EventTypeData> possibleEventTypeDataEntries =
+                events.FindAll(item => item.EventType != _lastEventType);
+
+            if (possibleEventTypeDataEntries.Count <= 0)
+            {
+                possibleEventTypeDataEntries.Add(events.First());
+            }
+            
+            EventTypeData eventTypeData =
+                possibleEventTypeDataEntries[Random.Range(0, possibleEventTypeDataEntries.Count)];
+            
+            _eventTypeDataEntriesLeft.Remove(eventTypeData);
+
+            return eventTypeData;
         }
 
         private void Update()

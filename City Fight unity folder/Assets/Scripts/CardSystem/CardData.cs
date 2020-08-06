@@ -93,7 +93,7 @@ namespace CardSystem
             }
             else if (PlayerAttackIndex > -1 && PlayerAttackIndex == playerData.PlayerIndex)
             {
-                playerData.PowerTempBoost = playerData.PowerScore * 0.5f;
+                playerData.IsDefending = true;
             }
         }
 
@@ -122,6 +122,12 @@ namespace CardSystem
             {
                 playerAttackingPowerScore *= 0.5f;
             }
+
+            if (playerToAttack.IsDefending)
+            {
+                playerAttackingPowerScore *= 1.5f;
+            }
+            
             float attackRatio = playerData.PowerScore / playerAttackingPowerScore;
 
             float unclampedAttackProcent = attackRatio - 1;
@@ -187,26 +193,30 @@ namespace CardSystem
                     }
                     break;
                 case TargetType.RandomSpecificRace:
-                    UnitData randomUnitRace =
-                        playerData.UnitManager.GetRandomUnit().GetUnitData<UnitData>();
-
-                    for (int i = 0; i < TargetData.AmountToLose; i++)
+                    if (playerData.UnitManager.Units.Count > 0)
                     {
-                        IUnit unitWithRace = playerData.UnitManager.Units.Find(item => item.GetUnitData<UnitData>().Equals(randomUnitRace));
-                        if (unitWithRace == null)
+                        UnitData randomUnitRace =
+                            playerData.UnitManager.GetRandomUnit().GetUnitData<UnitData>();
+
+                        for (int i = 0; i < TargetData.AmountToLose; i++)
                         {
-                            break;
-                        }
+                            IUnit unitWithRace = playerData.UnitManager.Units.Find(item => item.GetUnitData<UnitData>().Equals(randomUnitRace));
+                            if (unitWithRace == null)
+                            {
+                                break;
+                            }
                         
-                        playerData.UnitManager.RemoveUnit(unitWithRace);
+                            playerData.UnitManager.RemoveUnit(unitWithRace);
+                        }
                     }
+                   
                     break;
             }
         }
 
         private int GetFoodChangeAmount(bool split)
         {
-            int foodAmount = (FoodChange + FoodCost);
+            int foodAmount = FoodChange;
             
             if (split)
             {
@@ -218,26 +228,26 @@ namespace CardSystem
         
         private int GetWealthChangeAmount(bool split)
         {
-            int foodAmount = (WealthChange + WealthCost);
+            int wealthChange = WealthChange;
             
             if (split)
             {
-                return foodAmount / 2;
+                return wealthChange / 2;
             }
 
-            return foodAmount;
+            return wealthChange;
         }
         
         private int GetPowerChangeAmount(bool split)
         {
-            int foodAmount = (PowerChange + PowerCost);
+            int powerChange = PowerChange;
             
             if (split)
             {
-                return foodAmount / 2;
+                return powerChange / 2;
             }
 
-            return foodAmount;
+            return powerChange;
         }
         
         private IEnumerable<UnitData> GetUnitsToAddAmount(bool split)

@@ -30,6 +30,7 @@ namespace Units
         public void Turn()
         {
             IncreaseStats();
+            OnTurn();
         }
 
         protected abstract void OnTurn();
@@ -37,7 +38,6 @@ namespace Units
         private void IncreaseStats()
         {
             _playerData.WealthScore += _unitData.Income;
-            _playerData.PowerScore += _unitData.Power;
         }
     }
 }

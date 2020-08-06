@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7ed35e6eeb4d4fa9be1784797ebc67, type: 3}
   m_Name: 8 Elfs
   m_EditorClassIdentifier: 
-  Title: 8 elf 40 cost
+  Title: 8 elf
   Description: 'Gain 8 Soldier Elfs for 40 Wealth '
   UnitsToAdd:
   - {fileID: 11400000, guid: 4dc5cfa11a4726249adbc08ae7d1fc47, type: 2}
@@ -23,12 +23,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4dc5cfa11a4726249adbc08ae7d1fc47, type: 2}
   - {fileID: 11400000, guid: 4dc5cfa11a4726249adbc08ae7d1fc47, type: 2}
   - {fileID: 11400000, guid: 4dc5cfa11a4726249adbc08ae7d1fc47, type: 2}
+  EvenSplit: 0
   WealthChange: 0
   PowerChange: 0
   FoodChange: 0
   WealthCost: 40
   PowerCost: 0
   FoodCost: 0
+  KillCost: 0
   TargetData:
     AmountToLose: 0
     TargetType: 0

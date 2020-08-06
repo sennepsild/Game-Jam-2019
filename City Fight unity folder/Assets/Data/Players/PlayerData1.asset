@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerIndex: 0
   InputDeviceSlot: 1
-  _powerScore: 0
-  _foodScore: 0
-  _wealthScore: 1000
+  _powerScore: 10
+  _foodScore: 10
+  _wealthScore: 10
+  _unitsToStartWith:
+  - {fileID: 11400000, guid: 12a287832f6aa0549a29796c95ab36bf, type: 2}
   PrioritySprite: {fileID: 21300034, guid: 44912228355747449bd0ef1a2198cc6e, type: 3}

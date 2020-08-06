@@ -46,17 +46,17 @@ MonoBehaviour:
   - name: BButton
     keyboardInputs: 33000000
     gamepadInputs: 02000000
-    mouseInputs: 0c000000
+    mouseInputs: 0d000000
     virtualInputs: []
   - name: XButton
-    keyboardInputs: 
+    keyboardInputs: 20000000
     gamepadInputs: 03000000
-    mouseInputs: 0e000000
+    mouseInputs: 08000000
     virtualInputs: []
   - name: YButton
-    keyboardInputs: 21000000
+    keyboardInputs: 22000000
     gamepadInputs: 04000000
-    mouseInputs: 0f000000
+    mouseInputs: 00000000
     virtualInputs: []
   - name: Look Right
     keyboardInputs: 

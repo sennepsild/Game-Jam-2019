@@ -12,18 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7ed35e6eeb4d4fa9be1784797ebc67, type: 3}
   m_Name: Expensive Demands
   m_EditorClassIdentifier: 
-  Title: Raiding farmland
-  Description: You will lose 10 power, but gain 30 food.
-  CardSprite: {fileID: 21300000, guid: c303020bf146f184eb68e78939c17722, type: 3}
-  UnitsToAdd: []
+  Title: Expensive Demands
+  Description: You will lose 10  power, but gain 2 worker golems
+  UnitsToAdd:
+  - {fileID: 11400000, guid: d817f2fe717956a4ea1bcbcede3b5824, type: 2}
+  - {fileID: 11400000, guid: d817f2fe717956a4ea1bcbcede3b5824, type: 2}
+  EvenSplit: 0
   WealthChange: 0
   PowerChange: -10
-  FoodChange: 30
+  FoodChange: 0
   WealthCost: 0
   PowerCost: 0
   FoodCost: 0
+  KillCost: 0
   TargetData:
     AmountToLose: 0
     TargetType: 0
     TargetClass: 0
     SpecficUnitDataEntries: []
+  PlayerAttackIndex: -1

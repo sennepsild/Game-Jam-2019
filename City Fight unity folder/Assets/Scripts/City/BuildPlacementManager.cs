@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ namespace City
     public class BuildPlacementManager : MonoBehaviour
     {
         private const float DEGREES_PER_BUILDING = 40;
-        private const float DISTANCE_PER_CIRCLE = 1;
+        private const float DISTANCE_PER_CIRCLE = 2;
 
         [SerializeField]
         private Transform _center;
@@ -55,13 +56,20 @@ namespace City
             }
             _buildings.Add(building);
             _currentBuildCountInCircle++;
+            if (_maxBuildingsPerCircle <= _currentBuildCountInCircle)
+            {
+                _currentBuildCountInCircle = 0;
+                _currentRing++;
+            }
 
             return building;
         }
 
         private Vector2 GetBuildPosition()
         {
-            return _center.position +  Quaternion.AngleAxis(DEGREES_PER_BUILDING * _currentBuildCountInCircle, Vector2.up) * (Vector2.up * DISTANCE_PER_CIRCLE);
+            float degreeToRotateForBuilding = DEGREES_PER_BUILDING * _currentBuildCountInCircle;
+            print("_center: " + _center.position);
+            return new Vector2(_center.position.x, _center.position.y) + (Vector2.right * DISTANCE_PER_CIRCLE * _currentRing).Rotate(degreeToRotateForBuilding);
         }
 
         public void RemoveBuilding(IBuilding building)

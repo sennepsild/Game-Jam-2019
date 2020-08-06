@@ -55,6 +55,7 @@ namespace Units
         private void Die()
         {
             _playerData.PopulationScore -= _unitData.Population;
+            _playerData.PowerScore -= _unitData.Power;
             _unitManager.RemoveUnit(this);
         }
     }

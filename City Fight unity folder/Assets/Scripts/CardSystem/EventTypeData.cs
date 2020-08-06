@@ -26,6 +26,7 @@ namespace CardSystem
         Military,
         Building,
         Resources,
-        Combat
+        Combat,
+        NoEvent
     }
 }

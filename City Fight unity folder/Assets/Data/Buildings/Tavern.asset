@@ -17,6 +17,6 @@ MonoBehaviour:
   Power: 0
   Food: 0
   BuildingSprite: {fileID: 21300000, guid: 43eb4f388dc0f8044affca51c60e7034, type: 3}
-  Size: {x: 60, y: 60}
+  Size: {x: 59.52, y: 42.78}
   UnitsToAdd:
   - {fileID: 11400000, guid: 47c9608a7e9368a4695d85e5a3ac62ab, type: 2}

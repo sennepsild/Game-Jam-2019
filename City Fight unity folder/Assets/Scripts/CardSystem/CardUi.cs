@@ -11,7 +11,7 @@ namespace CardSystem
 {
     public class CardUi : MonoBehaviour
     {
-        private const float MINIMUM_CARD_CHOSEN_HIGHLIGHT_DURATION = 2;
+        private const float MINIMUM_CARD_CHOSEN_HIGHLIGHT_DURATION = 1;
         
         [SerializeField]
         private TextMeshProUGUI _titleLabel;
@@ -65,9 +65,8 @@ namespace CardSystem
             PlayerData playerWithPriority = _playersChosenThisCard.Find(item => item.HasPriority);
             if (playerWithPriority != null)
             {
-                _playersChosenThisCard.Remove(playerWithPriority);
                 Timer.Register(MINIMUM_CARD_CHOSEN_HIGHLIGHT_DURATION,
-                    () => _cardChosenHighlightUi.Deactivate(_playersChosenThisCard));
+                    () => _cardChosenHighlightUi.Deactivate(_playersChosenThisCard.FindAll(item => !item.HasPriority)));
             }
         }
 

@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: Unorganized Assaults
   m_EditorClassIdentifier: 
   Title: Unorganized Assaults
-  Description: You will lose 10 power, but the other players will lose 6 citizens
+  Description: You will lose 10 power, but get 10 food and 10 wealth
   UnitsToAdd: []
-  WealthChange: 0
+  EvenSplit: 0
+  WealthChange: 10
   PowerChange: -10
-  FoodChange: 0
+  FoodChange: 10
   WealthCost: 0
   PowerCost: 0
   FoodCost: 0
+  KillCost: 0
   TargetData:
     AmountToLose: 0
     TargetType: 0

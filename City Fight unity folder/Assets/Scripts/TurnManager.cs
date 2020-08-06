@@ -1,5 +1,6 @@
 using CardSystem;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace DefaultNamespace
 {
@@ -7,16 +8,17 @@ namespace DefaultNamespace
     {
         private const float TURN_DURATION = 5;
         private const int COMBAT_ROUND_TURN_COUNT = 5;
+        private const int COUNT_OF_ROUNDS = 25;
         
         [SerializeField]
         private CardUiManager _cardUiManager;
 
-        private int _turnCount;
+        private int _currentTurnCount;
 
         private void Awake()
         {
             _cardUiManager.CardsHasBeenChosen += EndTurn;
-            _turnCount = 1;
+            _currentTurnCount = 1;
             OnEndOfTurn();
         }
 
@@ -28,13 +30,17 @@ namespace DefaultNamespace
             }
             
             Timer.Register(TURN_DURATION, OnEndOfTurn);
-            _turnCount++;
+            _currentTurnCount++;
         }
 
         private void OnEndOfTurn()
         {
-            bool startingCombat = _turnCount % COMBAT_ROUND_TURN_COUNT == 0;
+            bool startingCombat = _currentTurnCount % COMBAT_ROUND_TURN_COUNT == 0;
             _cardUiManager.Show(startingCombat);
+            if (_currentTurnCount > COUNT_OF_ROUNDS)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
         }
     }
 }

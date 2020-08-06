@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using Banagine.EC;
 using Player;
 using UnityEngine;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 namespace Units
@@ -10,13 +12,13 @@ namespace Units
     {
         private PlayerData _playerData;
 
-        public List<IUnit> Units { get; private set; }
+        public DelayedList<IUnit> Units { get; private set; }
 
         public event Action<UnitData> UnitAdded;
         
         public UnitManager(PlayerData playerData)
         {
-            Units = new List<IUnit>();
+            Units = new DelayedList<IUnit>();
             _playerData = playerData;
         }
 
@@ -30,11 +32,12 @@ namespace Units
         
         public void AddUnit(UnitData unitData)
         {
+            UnitData unitDataClose = Object.Instantiate(unitData);
             if (UnitAdded != null)
             {
-                UnitAdded.Invoke(unitData);
+                UnitAdded.Invoke(unitDataClose);
             }
-            IUnit unit = unitData.CreateUnit(_playerData, this);
+            IUnit unit = unitDataClose.CreateUnit(_playerData, this);
             Units.Add(unit);
         }
 
@@ -44,6 +47,8 @@ namespace Units
             {
                 unit.Turn();
             }
+            
+            Units.UpdateList();
         }
 
         public void RemoveUnits(IEnumerable<IUnit> units)
@@ -61,7 +66,13 @@ namespace Units
 
         public IUnit GetRandomUnit()
         {
-            return Units[Random.Range(0, Units.Count)];
+            if (Units.Count <= 0)
+            {
+                Debug.LogError("Tried to get random unit, but there is no units left");
+                return null;
+            }
+            
+            return Units.GetItemAtIndex(Random.Range(0, Units.Count));
         }
     }
 }
